@@ -1,11 +1,11 @@
-/* RESET */
+/* ====== RESET ====== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BODY */
+/* ====== BODY ====== */
 body {
     font-family: 'Playfair Display', serif;
     background-color: #f9f7f5;
@@ -13,7 +13,7 @@ body {
     line-height: 1.6;
 }
 
-/* HEADER */
+/* ====== HEADER ====== */
 header {
     background: #111;
     color: white;
@@ -21,24 +21,31 @@ header {
     text-align: center;
 }
 
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
 header nav a {
     color: #ddd;
     margin: 0 10px;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 header nav a:hover {
     color: gold;
 }
 
-/* ====== Hero Video Background ====== */
-#hero-video {
+/* ====== HERO VIDEO SECTION ====== */
+#hero {
     position: relative;
     height: 100vh;
     overflow: hidden;
 }
 
-#hero-video video {
+#hero video.hero-video {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -49,15 +56,15 @@ header nav a:hover {
     z-index: 1;
 }
 
-#hero-video::after {
+#hero .hero-overlay {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* dark overlay to make text readable */
+    background: rgba(0, 0, 0, 0.4); /* dark overlay */
     z-index: 2;
 }
 
-.hero-content {
+.hero-overlay {
     position: relative;
     z-index: 3;
     color: white;
@@ -67,18 +74,34 @@ header nav a:hover {
     padding: 20px;
 }
 
-.hero-content h2 {
+.hero-overlay h2 {
     font-size: 2.5em;
     margin-bottom: 15px;
 }
 
-.hero-content p {
+.hero-overlay p {
     font-size: 1.2em;
 }
 
+/* ====== ABOUT SECTION ====== */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+}
 
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
 
-/* PRODUCTS */
+#about p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: auto;
+    color: #555;
+}
+
+/* ====== PRODUCTS SECTION ====== */
 #products {
     padding: 60px 20px;
     text-align: center;
@@ -97,6 +120,11 @@ header nav a:hover {
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
 }
 
 .product-card img {
@@ -110,6 +138,7 @@ header nav a:hover {
 
 .product-card p {
     font-size: 14px;
+    color: #555;
 }
 
 .product-card button {
@@ -120,6 +149,8 @@ header nav a:hover {
     color: white;
     border: none;
     cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
 }
 
 .product-card button:hover {
@@ -127,11 +158,41 @@ header nav a:hover {
     color: black;
 }
 
-/* FOOTER */
+/* ====== FOOTER ====== */
 footer {
     background: #111;
     color: #aaa;
     text-align: center;
     padding: 20px;
+    font-size: 0.9em;
 }
+
+footer a {
+    color: #ddd;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: gold;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+    .products-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .hero-overlay h2 {
+        font-size: 2em;
+    }
+}
+
 
