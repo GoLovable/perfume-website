@@ -1,179 +1,104 @@
-/* ====== Basic Page Styling ====== */
-body {
-    font-family: 'Playfair Display', serif; /* luxury font */
-    line-height: 1.6;
+/* RESET */
+* {
     margin: 0;
     padding: 0;
-    background-color: #fff8f0; /* soft luxury background */
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: #f9f7f5;
     color: #333;
+    line-height: 1.6;
 }
 
-/* ====== Header ====== */
+/* HEADER */
 header {
-    background-color: #f4e1d2;
-    padding: 20px 0;
+    background: #111;
+    color: white;
+    padding: 20px;
     text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-header nav {
-    margin-top: 10px;
 }
 
 header nav a {
-    margin: 0 15px;
+    color: #ddd;
+    margin: 0 10px;
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: all 0.3s ease;
 }
 
 header nav a:hover {
-    color: #a45c4f;
+    color: gold;
 }
 
-/* ====== Hero Section ====== */
+/* HERO */
 #hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url("images/hero.jpg");
+    background-size: cover;
+    color: white;
     text-align: center;
-    padding: 80px 20px;
-    background-color: #ffe6d1;
+    padding: 100px 20px;
 }
 
 #hero h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 40px;
 }
 
-#hero p {
-    font-size: 1.2em;
-    color: #555;
-}
-
-/* ====== About Section ====== */
-#about {
-    background-color: #fff8f0;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-#about p {
-    max-width: 600px;
-    margin: auto;
-    font-size: 1em;
-    color: #555;
-}
-
-/* ====== Products Section ====== */
+/* PRODUCTS */
 #products {
-    background-color: #fff0e6;
+    padding: 60px 20px;
     text-align: center;
 }
 
-#products h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-}
-
-/* Product buttons instead of list */
-.product-buttons {
+.products-container {
     display: flex;
-    justify-content: center;
     gap: 20px;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 20px;
 }
 
-.product-buttons button {
-    background-color: #f4e1d2;
+.product-card {
+    background: white;
+    width: 280px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 15px 0 5px;
+}
+
+.product-card p {
+    font-size: 14px;
+}
+
+.product-card button {
+    margin-top: 15px;
+    padding: 10px;
+    width: 100%;
+    background: black;
+    color: white;
     border: none;
-    padding: 18px 30px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
 }
 
-.product-buttons button:hover {
-    transform: translateY(-5px);
-    background-color: #ffe6d1;
+.product-card button:hover {
+    background: gold;
+    color: black;
 }
 
-/* ====== Contact Section ====== */
-#contact {
-    background-color: #fff8f0;
-    text-align: center;
-    padding: 80px 20px;
-}
-
-#contact h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
-}
-
-#contact p {
-    font-size: 1em;
-    color: #555;
-}
-
-/* ====== Footer ====== */
+/* FOOTER */
 footer {
-    background-color: #f4e1d2;
+    background: #111;
+    color: #aaa;
     text-align: center;
-    padding: 20px 0;
-    font-size: 0.9em;
-    color: #333;
+    padding: 20px;
 }
 
-footer a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    margin: 0 5px;
-    transition: all 0.3s ease;
-}
-
-footer a:hover {
-    color: #a45c4f;
-}
-
-/* ====== Sections Centered & Spacing ====== */
-section {
-    max-width: 1000px;
-    margin: auto;
-    text-align: center;
-}
-
-#hero, #about, #products, #contact {
-    padding: 80px 20px;
-}
-
-/* ====== Responsive for Mobile ====== */
-@media (max-width: 768px) {
-    .product-buttons {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    header nav a {
-        display: block;
-        margin: 5px 0;
-    }
-
-    #hero h2 {
-        font-size: 1.6em;
-    }
-
-    #about h2, #products h2, #contact h2 {
-        font-size: 1.5em;
-    }
-}
